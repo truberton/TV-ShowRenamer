@@ -11,29 +11,15 @@ namespace TelesarjadeRenameimine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(@"Mis on path, kus failid on? (See peab lõppema [\], näiteks E:\TestFolder\)");
-            string path = Console.ReadLine();
-            string[] AllFiles = Directory.GetFiles(path);
-            Console.WriteLine("Mis tahad, et faili nimi oleks? (Näide: S01E*, tärni osa küsin hiljem)");
-            string nimi = Console.ReadLine();
-            Console.WriteLine("Mis osast/episoodist alustada? (See tärn)");
-            int EsimeneOsa = Int32.Parse(Console.ReadLine());
-            Console.WriteLine("Mis tüüpi failid need on? (.mp4, .avi, .wma jne)");
-            string failiTüüp = Console.ReadLine();
+            TaasNimetamine Nimetamine = new TaasNimetamine();
+            string lõpetada = "Mdea";
 
-            foreach (string file in AllFiles)
+            while (lõpetada != "stop" || lõpetada != "stopp")
             {
-                if (EsimeneOsa < 10)
-                {
-                    File.Move(file, path + nimi+ "0" + EsimeneOsa + failiTüüp);
-                }
-                else
-                {
-                    File.Move(file, path + nimi + EsimeneOsa + failiTüüp);
-                }
-                EsimeneOsa++;
+                Nimetamine.rename();
+                Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
+                lõpetada = Console.ReadLine();
             }
-            Console.WriteLine(path + nimi + EsimeneOsa);
         }
     }
 }
