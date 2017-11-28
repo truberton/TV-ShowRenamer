@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 
 //TODO
-//* Kustutada ühte tüüpi failid(Kuradi subtiitlid ja tekst failid) [TEHTUD]
-//* Ainult renameida ühte faili tüüpi(mp4, mkv või mis iganes user sisestab) [TEHTUD]
-//* Folderitest kõik asjad välja tuua [TEHTUD]
+//* Renameib file kuid jätab sama lõpu (.mkv, .mp4) mis varem oli
 
 namespace TelesarjadeRenameimine
 {
