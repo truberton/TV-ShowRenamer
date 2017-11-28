@@ -18,40 +18,57 @@ namespace TelesarjadeRenameimine
         {
             TaasNimetamine Nimetamine = new TaasNimetamine();
             Kustutamine kustuta = new Kustutamine();
-            string lõpetada = "Mdea";
-            Console.WriteLine("Mida tahad teha? rename/kustuta/mõlemat");
-            string vastus = Console.ReadLine();
-            if (vastus == "rename")
+            string vastus = "Mdea";
+            string lõpetada = "mdea";
+
+            while (vastus != "exit" || vastus != "stop")
             {
-                while (lõpetada != "stop" || lõpetada != "stopp")
+                lõpetada = "Mitte stop";
+                Console.WriteLine("Mida tahad teha?");
+                Console.WriteLine("* rename");
+                Console.WriteLine("* kustuta");
+                Console.WriteLine("* mõlemat");
+                Console.WriteLine("* exit");
+                vastus = Console.ReadLine();
+                Console.WriteLine();
+
+                if (vastus == "rename")
                 {
-                    Nimetamine.rename();
-                    Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
-                    lõpetada = Console.ReadLine();
+                    while (lõpetada != "stop")
+                    {
+                        Nimetamine.rename();
+                        Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
+                        lõpetada = Console.ReadLine();
+                    }
                 }
-            }
-            else if (vastus == "kustuta")
-            {
-                while (lõpetada != "stop" || lõpetada != "stopp")
+                else if (vastus == "kustuta")
                 {
-                    kustuta.delete();
-                    Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
-                    lõpetada = Console.ReadLine();
+                    while (lõpetada != "stop")
+                    {
+                        kustuta.delete();
+                        Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
+                        lõpetada = Console.ReadLine();
+                    }
                 }
-            }
-            else if (vastus == "mõlemat")
-            {
-                while (lõpetada != "stop" || lõpetada != "stopp")
+                else if (vastus == "mõlemat" || vastus == "molemat")
                 {
-                    kustuta.delete();
-                    Nimetamine.rename();
-                    Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
-                    lõpetada = Console.ReadLine();
+                    while (lõpetada != "stop")
+                    {
+                        kustuta.delete();
+                        Nimetamine.rename();
+                        Console.WriteLine("Kui tahad lõpetada kirjuta stop, muidu kirjuta mis iganes muud");
+                        lõpetada = Console.ReadLine();
+                    }
                 }
-            }
-            else
-            {
-                Console.WriteLine("Õpi juhendeid lugema");
+                else if (vastus == "exit")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Fuck off");
+                }
+                Console.WriteLine();
             }
         }
     }

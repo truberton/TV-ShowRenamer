@@ -13,13 +13,33 @@ namespace TelesarjadeRenameimine
         {
             Console.WriteLine(@"Mis on path, kus failid on? (See peab lõppema folderiga, näiteks E:\TestFolder)");
             string path = Console.ReadLine() + @"\";
+            if (path == @"\")
+            {
+                Console.WriteLine("---Lõpetan taasnimetamise---");
+                return;
+            }
             string[] AllFiles = Directory.GetFiles(path);
             Console.WriteLine("Mis tahad, et faili nimi oleks? (Näide: S01E*, tärni osa küsin hiljem)");
             string nimi = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(nimi))
+            {
+                Console.WriteLine("---Lõpetan taasnimetamise---");
+                return;
+            }
             Console.WriteLine("Mis osast/episoodist alustada? (See tärn)");
             int EsimeneOsa = Int32.Parse(Console.ReadLine());
+            if (string.IsNullOrEmpty(EsimeneOsa.ToString()))
+            {
+                Console.WriteLine("---Lõpetan taasnimetamise---");
+                return;
+            }
             Console.WriteLine("Mis tüüpi failid need on? (.mp4, .avi, .wma jne)");
             string failiTüüp = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(failiTüüp))
+            {
+                Console.WriteLine("---Lõpetan taasnimetamise---");
+                return;
+            }
 
             foreach (string file in AllFiles)
             {
