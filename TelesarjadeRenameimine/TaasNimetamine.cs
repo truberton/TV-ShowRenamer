@@ -46,25 +46,11 @@ namespace TelesarjadeRenameimine
                 //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
                 if (EsimeneOsa < 10)
                 {
-                    if (File.Exists(path + nimi + "0" + EsimeneOsa + failiTüüp))
-                    {
-                        Console.WriteLine(path + nimi + "0" + EsimeneOsa + failiTüüp + " juba eksisteerib, jääb vahele");
-                    }
-                    else
-                    {
-                        File.Move(file, path + nimi + "0" + EsimeneOsa + failiTüüp);
-                    }
+                    File.Move(file, path + nimi + "0" + EsimeneOsa + failiTüüp);
                 }
                 else
                 {
-                    if (File.Exists(path + nimi + EsimeneOsa + failiTüüp))
-                    {
-                        Console.WriteLine(path + nimi + EsimeneOsa + failiTüüp + " juba eksisteerib, jääb vahele");
-                    }
-                    else
-                    {
-                        File.Move(file, path + nimi + EsimeneOsa + failiTüüp);
-                    }
+                    File.Move(file, path + nimi + EsimeneOsa + failiTüüp);
                 }
                 EsimeneOsa++;
             }
