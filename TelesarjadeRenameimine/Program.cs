@@ -7,7 +7,7 @@ using System.IO;
 
 //TODO
 //* Kustutada ühte tüüpi failid(Kuradi subtiitlid ja tekst failid) [TEHTUD]
-//* Ainult renameida ühte faili tüüpi(mp4, mkv või mis iganes user sisestab)
+//* Ainult renameida ühte faili tüüpi(mp4, mkv või mis iganes user sisestab) [TEHTUD]
 //* Folderitest kõik asjad välja tuua
 
 namespace TelesarjadeRenameimine
@@ -26,13 +26,13 @@ namespace TelesarjadeRenameimine
                 lõpetada = "Mitte stop";
                 Console.WriteLine("Mida tahad teha?");
                 Console.WriteLine("* rename");
-                Console.WriteLine("* kustuta");
-                Console.WriteLine("* mõlemat");
+                Console.WriteLine("* delete");
+                Console.WriteLine("* both");
                 Console.WriteLine("* exit");
                 vastus = Console.ReadLine();
                 Console.WriteLine();
 
-                if (vastus == "rename")
+                if (vastus == "rename" || vastus == "r")
                 {
                     while (lõpetada != "stop")
                     {
@@ -41,7 +41,7 @@ namespace TelesarjadeRenameimine
                         lõpetada = Console.ReadLine();
                     }
                 }
-                else if (vastus == "kustuta")
+                else if (vastus == "kustuta" || vastus == "delete" || vastus == "d")
                 {
                     while (lõpetada != "stop")
                     {
@@ -50,7 +50,7 @@ namespace TelesarjadeRenameimine
                         lõpetada = Console.ReadLine();
                     }
                 }
-                else if (vastus == "mõlemat" || vastus == "molemat")
+                else if (vastus == "mõlemat" || vastus == "molemat" || vastus == "both" || vastus == "b")
                 {
                     while (lõpetada != "stop")
                     {
