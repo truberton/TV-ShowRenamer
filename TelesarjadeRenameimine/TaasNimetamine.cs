@@ -46,11 +46,11 @@ namespace TelesarjadeRenameimine
                 //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
                 if (EsimeneOsa < 10)
                 {
-                    File.Move(file, path + nimi + "0" + EsimeneOsa + failiTüüp);
+                    File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
                 }
                 else
                 {
-                    File.Move(file, path + nimi + EsimeneOsa + failiTüüp);
+                    File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
                 }
                 EsimeneOsa++;
             }
