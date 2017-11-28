@@ -24,12 +24,14 @@ namespace TelesarjadeRenameimine
             while (vastus != "exit" || vastus != "stop")
             {
                 lõpetada = "Mitte stop";
+                Console.WriteLine("--------------------------------------");
                 Console.WriteLine("Mida tahad teha?");
                 Console.WriteLine("* rename");
                 Console.WriteLine("* delete");
                 Console.WriteLine("* both (delete siis rename)");
                 Console.WriteLine("* move");
                 Console.WriteLine("* exit");
+                Console.WriteLine("--------------------------------------");
 
                 vastus = Console.ReadLine();
                 Console.WriteLine();
