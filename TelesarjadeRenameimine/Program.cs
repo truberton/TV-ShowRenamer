@@ -64,7 +64,7 @@ namespace TelesarjadeRenameimine
                         lõpetada = Console.ReadLine();
                     }
                 }
-                else if (vastus == "move" || vastus == "liiguta" || vasuts == "m")
+                else if (vastus == "move" || vastus == "liiguta" || vastus == "m")
                 {
                     while (lõpetada != "stop")
                     {
