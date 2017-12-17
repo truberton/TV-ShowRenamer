@@ -36,6 +36,7 @@
             this.EsimeneOsa_textbox = new System.Windows.Forms.TextBox();
             this.Start = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -85,13 +86,13 @@
             // 
             this.EsimeneOsa_textbox.Location = new System.Drawing.Point(12, 105);
             this.EsimeneOsa_textbox.Name = "EsimeneOsa_textbox";
-            this.EsimeneOsa_textbox.Size = new System.Drawing.Size(100, 20);
+            this.EsimeneOsa_textbox.Size = new System.Drawing.Size(104, 20);
             this.EsimeneOsa_textbox.TabIndex = 5;
             this.EsimeneOsa_textbox.TextChanged += new System.EventHandler(this.EsimeneOsa_textbox_TextChanged);
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(12, 147);
+            this.Start.Location = new System.Drawing.Point(12, 152);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 6;
@@ -102,7 +103,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(118, 151);
+            this.checkBox1.Location = new System.Drawing.Point(107, 171);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(158, 17);
             this.checkBox1.TabIndex = 8;
@@ -110,11 +111,23 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(107, 143);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(177, 17);
+            this.checkBox2.TabIndex = 9;
+            this.checkBox2.Text = "Mitu erinevat faili tüüpi renamein";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // Popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 188);
+            this.ClientSize = new System.Drawing.Size(342, 210);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.EsimeneOsa_textbox);
@@ -140,5 +153,6 @@
         private System.Windows.Forms.TextBox EsimeneOsa_textbox;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }

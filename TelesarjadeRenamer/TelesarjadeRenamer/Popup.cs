@@ -60,26 +60,54 @@ namespace TelesarjadeRenamer
 
             else
             {
-                string[] AllFiles = Directory.GetFiles(path, "*" + failiTüüp);
-                if (checkBox1.Checked)
+                if (checkBox2.Checked) //TESTIMINE
                 {
-                    if (!nimi.EndsWith(" "))
+                    string[] AllFiles = Directory.GetFiles(path);
+                    if (checkBox1.Checked)
                     {
-                        nimi += " "; 
+                        if (!nimi.EndsWith(" "))
+                        {
+                            nimi += " ";
+                        }
                     }
+                    foreach (string file in AllFiles)
+                    {
+                        //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
+                        failiTüüp = Path.GetExtension(path + file);
+                        if (EsimeneOsa < 10 && !checkBox1.Checked)
+                        {
+                            File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        }
+                        else
+                        {
+                            File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        }
+                        EsimeneOsa++;
+                    } 
                 }
-                foreach (string file in AllFiles)
+                else
                 {
-                    //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
-                    if (EsimeneOsa < 10 && !checkBox1.Checked)
+                    string[] AllFiles = Directory.GetFiles(path, "*" + failiTüüp);
+                    if (checkBox1.Checked)
                     {
-                        File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        if (!nimi.EndsWith(" "))
+                        {
+                            nimi += " ";
+                        }
                     }
-                    else
+                    foreach (string file in AllFiles)
                     {
-                        File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
+                        if (EsimeneOsa < 10 && !checkBox1.Checked)
+                        {
+                            File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        }
+                        else
+                        {
+                            File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
+                        }
+                        EsimeneOsa++;
                     }
-                    EsimeneOsa++;
                 }
                 MessageBox.Show("Telesarjade nimed on vahetatud");
             }
@@ -87,6 +115,11 @@ namespace TelesarjadeRenamer
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
