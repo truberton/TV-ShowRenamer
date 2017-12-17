@@ -53,14 +53,14 @@ namespace TelesarjadeRenamer
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["Form1"];
             string path = ((Form1)f).text;
 
-            if (string.IsNullOrWhiteSpace(failiTüüp) || string.IsNullOrWhiteSpace(nimi))
+            if (string.IsNullOrWhiteSpace(nimi))
             {
                 MessageBox.Show("Palun täida kõik textboxid");
             }
 
             else
             {
-                if (checkBox2.Checked) //TESTIMINE
+                if (!checkBox2.Checked)
                 {
                     string[] AllFiles = Directory.GetFiles(path);
                     if (checkBox1.Checked)

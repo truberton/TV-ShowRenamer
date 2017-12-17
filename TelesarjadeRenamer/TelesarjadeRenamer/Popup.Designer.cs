@@ -116,9 +116,9 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(107, 143);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(177, 17);
+            this.checkBox2.Size = new System.Drawing.Size(166, 17);
             this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Mitu erinevat faili tüüpi renamein";
+            this.checkBox2.Text = "Ainult ühte faili tüüpi renamein";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
