@@ -104,7 +104,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Liiguta);
             this.Controls.Add(this.Delete);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "TelesarjadeRenamer";
             this.ResumeLayout(false);
             this.PerformLayout();
