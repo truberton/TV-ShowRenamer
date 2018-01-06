@@ -37,6 +37,7 @@
             this.Start = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +54,7 @@
             this.failiTüüp_textbox.Location = new System.Drawing.Point(12, 26);
             this.failiTüüp_textbox.Name = "failiTüüp_textbox";
             this.failiTüüp_textbox.Size = new System.Drawing.Size(104, 20);
-            this.failiTüüp_textbox.TabIndex = 1;
+            this.failiTüüp_textbox.TabIndex = 6;
             this.failiTüüp_textbox.TextChanged += new System.EventHandler(this.failiTüüp_TextChanged);
             // 
             // label2
@@ -61,16 +62,16 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 13);
+            this.label2.Size = new System.Drawing.Size(214, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Mis tahad, et faili nimi oleks? (Näide: S01E*, tärni osa küsin hiljem)";
+            this.label2.Text = "Mis tahad, et faili nimi oleks? (Näide: S01E*)";
             // 
             // nimi_textbox
             // 
             this.nimi_textbox.Location = new System.Drawing.Point(12, 66);
             this.nimi_textbox.Name = "nimi_textbox";
             this.nimi_textbox.Size = new System.Drawing.Size(104, 20);
-            this.nimi_textbox.TabIndex = 3;
+            this.nimi_textbox.TabIndex = 0;
             this.nimi_textbox.TextChanged += new System.EventHandler(this.nimi_textbox_TextChanged);
             // 
             // label3
@@ -87,15 +88,15 @@
             this.EsimeneOsa_textbox.Location = new System.Drawing.Point(12, 105);
             this.EsimeneOsa_textbox.Name = "EsimeneOsa_textbox";
             this.EsimeneOsa_textbox.Size = new System.Drawing.Size(104, 20);
-            this.EsimeneOsa_textbox.TabIndex = 5;
+            this.EsimeneOsa_textbox.TabIndex = 1;
             this.EsimeneOsa_textbox.TextChanged += new System.EventHandler(this.EsimeneOsa_textbox_TextChanged);
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(12, 152);
+            this.Start.Location = new System.Drawing.Point(12, 151);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
-            this.Start.TabIndex = 6;
+            this.Start.TabIndex = 2;
             this.Start.Text = "Start";
             this.Start.UseVisualStyleBackColor = true;
             this.Start.Click += new System.EventHandler(this.Start_Click);
@@ -103,10 +104,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(107, 171);
+            this.checkBox1.Location = new System.Drawing.Point(116, 132);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(158, 17);
-            this.checkBox1.TabIndex = 8;
+            this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Episoodi numbri ette ei käi 0";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -114,19 +115,32 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(107, 143);
+            this.checkBox2.Location = new System.Drawing.Point(116, 155);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(166, 17);
-            this.checkBox2.TabIndex = 9;
+            this.checkBox2.TabIndex = 4;
             this.checkBox2.Text = "Ainult ühte faili tüüpi renamein";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(116, 178);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(138, 17);
+            this.checkBox3.TabIndex = 5;
+            this.checkBox3.Text = "Igale failile lisan ise lõpu";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // Popup
             // 
+            this.AcceptButton = this.Start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 210);
+            this.ClientSize = new System.Drawing.Size(286, 202);
+            this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Start);
@@ -155,5 +169,6 @@
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }

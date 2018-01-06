@@ -16,6 +16,8 @@ namespace TelesarjadeRenamer
         public string failiTüüp;
         public string nimi;
         public int EsimeneOsa;
+        public string LisaTekst;
+        public string eraldaja;
 
         public Popup()
         {
@@ -74,13 +76,33 @@ namespace TelesarjadeRenamer
                     {
                         //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
                         failiTüüp = Path.GetExtension(path + file);
-                        if (EsimeneOsa < 10 && !checkBox1.Checked)
+                        if (checkBox3.Checked) //TODO - SIIN ON VAJA EDASI TEHA
                         {
-                            File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
+                            using (EraldiNimetamine Eraldi = new EraldiNimetamine())
+                            {
+                                Eraldi.LabelText = "Mida tahad lisada " + EsimeneOsa + ". osa lõppu";
+                                Eraldi.ShowDialog();
+                                LisaTekst = Eraldi.LisaTekst;
+                            }
+                            if (EsimeneOsa < 10 && !checkBox1.Checked)
+                            {
+                                File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + eraldaja + LisaTekst + failiTüüp);
+                            }
+                            else
+                            {
+                                File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + eraldaja + LisaTekst + failiTüüp);
+                            } 
                         }
                         else
                         {
-                            File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
+                            if (EsimeneOsa < 10 && !checkBox1.Checked)
+                            {
+                                File.Move(file, path + nimi + "0" + Convert.ToString(EsimeneOsa) + failiTüüp);
+                            }
+                            else
+                            {
+                                File.Move(file, path + nimi + Convert.ToString(EsimeneOsa) + failiTüüp);
+                            }
                         }
                         EsimeneOsa++;
                     } 
@@ -122,6 +144,18 @@ namespace TelesarjadeRenamer
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                using (Eraldaja Eraldaja = new Eraldaja())
+                {
+                    Eraldaja.ShowDialog();
+                    eraldaja = Eraldaja.eraldaja;
+                }
+            }
         }
     }
 }

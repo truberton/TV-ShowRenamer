@@ -41,7 +41,7 @@
             this.Delete.Location = new System.Drawing.Point(12, 119);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(75, 23);
-            this.Delete.TabIndex = 0;
+            this.Delete.TabIndex = 3;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = true;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
@@ -51,7 +51,7 @@
             this.Liiguta.Location = new System.Drawing.Point(12, 73);
             this.Liiguta.Name = "Liiguta";
             this.Liiguta.Size = new System.Drawing.Size(75, 23);
-            this.Liiguta.TabIndex = 1;
+            this.Liiguta.TabIndex = 2;
             this.Liiguta.Text = "Move";
             this.Liiguta.UseVisualStyleBackColor = true;
             this.Liiguta.Click += new System.EventHandler(this.Move_Click);
@@ -61,7 +61,7 @@
             this.textBox1.Location = new System.Drawing.Point(93, 26);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Rename
@@ -69,7 +69,7 @@
             this.Rename.Location = new System.Drawing.Point(12, 26);
             this.Rename.Name = "Rename";
             this.Rename.Size = new System.Drawing.Size(75, 23);
-            this.Rename.TabIndex = 3;
+            this.Rename.TabIndex = 1;
             this.Rename.Text = "Rename";
             this.Rename.UseVisualStyleBackColor = true;
             this.Rename.Click += new System.EventHandler(this.Rename_Click);
@@ -88,7 +88,7 @@
             this.Paste.Location = new System.Drawing.Point(235, 52);
             this.Paste.Name = "Paste";
             this.Paste.Size = new System.Drawing.Size(75, 23);
-            this.Paste.TabIndex = 5;
+            this.Paste.TabIndex = 4;
             this.Paste.Text = "Paste";
             this.Paste.UseVisualStyleBackColor = true;
             this.Paste.Click += new System.EventHandler(this.Paste_Click);

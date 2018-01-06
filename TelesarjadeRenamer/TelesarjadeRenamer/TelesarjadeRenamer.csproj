@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Eraldaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eraldaja.Designer.cs">
+      <DependentUpon>Eraldaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EraldiNimetamine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EraldiNimetamine.Designer.cs">
+      <DependentUpon>EraldiNimetamine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Eraldaja.resx">
+      <DependentUpon>Eraldaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EraldiNimetamine.resx">
+      <DependentUpon>EraldiNimetamine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

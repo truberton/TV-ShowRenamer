@@ -13,7 +13,6 @@ namespace TelesarjadeRenamer
 {
     public partial class Form1 : Form
     {
-
         public string text;
 
         public Form1()

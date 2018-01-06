@@ -40,5 +40,10 @@ namespace TelesarjadeRenamer
             MessageBox.Show("Kõik " + failiTüüp + " failid on kustutatud");
             this.Close();
         }
+
+        private void Kustutamine_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
