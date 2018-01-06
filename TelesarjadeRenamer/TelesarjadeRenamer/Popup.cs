@@ -76,7 +76,7 @@ namespace TelesarjadeRenamer
                     {
                         //Siin on if, sest kui sisestad S01E*, siis see näeb välja S01E1 kuni S01E10, kuid nii on see S01E01 kuni S01E10 (palju ilusam)
                         failiTüüp = Path.GetExtension(path + file);
-                        if (checkBox3.Checked) //TODO - SIIN ON VAJA EDASI TEHA
+                        if (checkBox3.Checked)
                         {
                             using (EraldiNimetamine Eraldi = new EraldiNimetamine())
                             {
