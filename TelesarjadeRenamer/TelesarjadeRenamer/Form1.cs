@@ -93,5 +93,14 @@ namespace TelesarjadeRenamer
         {
             textBox1.Text = Clipboard.GetText();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
     }
 }
