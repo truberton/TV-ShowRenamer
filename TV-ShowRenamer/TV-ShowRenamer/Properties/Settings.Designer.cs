@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TelesarjadeRenamer.Properties
+namespace TV_ShowRenamer.Properties
 {
 
 
