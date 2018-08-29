@@ -19,10 +19,11 @@ using System.Text.RegularExpressions;
 namespace TV_ShowRenamer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Program for renaming files
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static string[] PreviousDirectoryFiles;
         public MainWindow()
         {
             InitializeComponent();
@@ -58,6 +59,7 @@ namespace TV_ShowRenamer
             {
                 int FirstEpisodeNum = int.Parse(FirstEpisode.Text);
                 string[] FilesInDirectory = Directory.GetFiles(Path_Textbox.Text);
+                PreviousDirectoryFiles = FilesInDirectory;
                 string episodeName;
                 string FileType;
                 foreach (string file in FilesInDirectory)
@@ -96,6 +98,8 @@ namespace TV_ShowRenamer
             //Deletes previous files in listbox
             Files.Items.Clear();
             string[] FilesInDirectory = Directory.GetFiles(Path_Textbox.Text);
+            Array.Sort(FilesInDirectory, (x, y) => String.Compare(x, y));
+
             foreach (var item in FilesInDirectory)
             {
                 ListBoxItem itm = new ListBoxItem();
@@ -105,9 +109,22 @@ namespace TV_ShowRenamer
             }
         }
 
+        private void Undo_Click(object sender, RoutedEventArgs e)
+        {
+            string[] FilesInDirectory = Directory.GetFiles(Path_Textbox.Text);
+            int i = 0;
+            foreach (var CurrentFile in FilesInDirectory)
+            {
+                File.Move(CurrentFile, PreviousDirectoryFiles[i]);
+                i++;
+            }
+            ResetListbox();
+        }
+
         private void ZeroBeforeNumber_Checkbox_Checked(object sender, RoutedEventArgs e)
         {
 
         }
+
     }
 }

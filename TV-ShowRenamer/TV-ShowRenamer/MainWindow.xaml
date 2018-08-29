@@ -17,6 +17,7 @@
         <CheckBox x:Name="ZeroBeforeNumber_Checkbox" Content="Episode number begins with 0" HorizontalAlignment="Left" Margin="115,160,0,0" VerticalAlignment="Top" Checked="ZeroBeforeNumber_Checkbox_Checked"/>
         <Label Content="First episode number" HorizontalAlignment="Left" Margin="187,89,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="FirstEpisode" HorizontalAlignment="Left" Height="23" Margin="255,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54" PreviewTextInput="FirstEpisode_PreviewTextInput"/>
+        <Button x:Name="Undo" Content="Undo" HorizontalAlignment="Left" Margin="25,192,0,0" VerticalAlignment="Top" Width="75" Click="Undo_Click"/>
 
     </Grid>
 </Window>
